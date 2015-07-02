@@ -57,14 +57,109 @@ Then we can install via bower angular.
 bower install --save angular
 ```
 
-Then verify that in your `vendor/assets/components/` their is an `angular` folder. If you verify that you application has angular.
+Then verify that in your `vendor/assets/components/` their is an `angular` folder. If you verify that you application has angular you can then move on to requiring it in your assets.
+
+`app/assets/javascripts/application.js`
+
+```javascript
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require angular/angular 
+//= require_tree .
+
+```
+
+Do you see angular in the above list of requires. It's important that it comes before `//= require_tree .`
+
+
+Now you can write all you angular application code in your application.js. Let's add some simple logic to our application.js.
+
+`application.js`
+
+```javascript
+...
+
+var AccountApp = angular.module("AccountApp", [])
+
+AccountApp.controller("MainCtrl", function ($scope) {
+	$scope.greeting = "Hello world";
+});
+
+```
+
+Then in your `account.html.erb` let's add the following.
+
+```html
+
+<div ng-app="AccountApp">
+	<div ng-controller="MainCtrl">
+		{{greeting}}
+	</div>
+</div>
+
+```
+
+Then if you login and go to your account at [localhost:3000/account](localhost:3000/account).
+
+You should see 
+
+```
+Hello world
+```
+
+
+## Displaying User Data
+
+You can get information about the user using angular's built-in `$http` module.
+
+
+`application.js`
+
+```
+var AccountApp = angular.module("AccountApp", [])
+
+AccountApp.controller("MainCtrl", function ($scope, $http) {
+	$scope.greeting = "Hello world";
+	
+	$scope.current_user = null;
+	
+	$http.get("/account.json").
+		success(function (data) {
+			$scope.current_user = data;
+		});
+});
+
+```
 
 
 
+This assumes you have the following route
+
+
+```ruby
+
+get "/account", to: "store_owners#show"
+```
+
+with a `show` method that looks something like th following.
 
 
 
+```ruby
 
+def show
+  @store_owner = current_owner
+  
+  respond_to do |f|
+  	f.html
+  	f.json {render json: @store_owner }
+  end
+end
+
+```
+
+This just glorified version of the `users#show` that we've worked with the whole class.
 
 
 
