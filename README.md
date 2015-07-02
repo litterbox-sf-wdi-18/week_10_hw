@@ -1,11 +1,11 @@
 # Week 10 
 ## API's and Angular
 
-The objective of this assignment is to finish the design of an API that uses basic http sign up and createes a unique token that can be used to confirm the users interactions with the API.
+The objective of this assignment is to finish the design of an API that uses basic http sign up and creates a unique token that can be used to confirm a user's interactions with the API.
 
 ## App 
 
-You'll need everything from the point of sale application you developed during the week. You should finish this if you haven't already. If you need pointers. See the `setup_help.md` file included in this repository. Once you have a simple receipts API you that a user can sign up and login to using an email and passowrd you should build an angular application for the `/account` page. The account page should be an angular application that satisfies the following user stories:
+You'll need to reference the point of sale application you developed during the week. You should finish this if you haven't already. If you need help, see the `setup_help.md` file included in this repository. Once you have a simple receipts API you, where a user can sign up and login with an email and password, then focus on the angular application for the `/account` page. This page should contain an angular application that satisfies the following user stories:
 
 * User can see a dashboard of their profile information. User can edit profile details without page reload via modal -- "medium/difficult".
 * User can view reset their api token without page reload -- "simple"
