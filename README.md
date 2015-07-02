@@ -88,7 +88,7 @@ AccountApp.controller("MainCtrl", function ($scope) {
 
 ```
 
-Then in your `account.html.erb` let's add the following.
+Then in your `show.html.erb` for your `/account` route. let's add the following.
 
 ```html
 
@@ -162,6 +162,47 @@ end
 This just glorified version of the `users#show` that we've worked with the whole class.
 
 
+You can then display the user information on the in the `show.html.erb`.
+
+
+```html
+<div ng-app="AccountApp">
+	<div ng-controller="MainCtrl">
+		{{greeting}}
+		{{current_user}}
+	</div>
+</div>
+
+```
+
+## Pitfalls: 422 Unprocessible
+
+If you're going to be posting and patching to the rails server you'll need a csrf param. Angular has to be congifured to send this with a request.
+
+`application.js`
+
+```javascript
+
+var AccountApp = angular.module("AccountApp", [])
+
+// just add this!! 
+AccountApp.config(["$httpProvider", function ($httpProvider) {
+	$httpProvider.
+		defaults.headers.common["X-CSRF"] = $("meta[name=csrf-token]").attr("content");
+}])
+
+AccountApp.controller("MainCtrl", function ($scope, $http) {
+	$scope.greeting = "Hello world";
+	
+	$scope.current_user = null;
+	
+	$http.get("/account.json").
+		success(function (data) {
+			$scope.current_user = data;
+		});
+});
+
+```
 
 
 
