@@ -7,7 +7,7 @@ The objective of this assignment is to finish the design of an API that uses bas
 
 You'll need everything from the point of sale application you developed during the week. You should finish this if you haven't already. If you need pointers. See the `setup_help.md` file included in this repository. Once you have a simple receipts API you that a user can sign up and login to using an email and passowrd you should build an angular application for the `/account` page. The account page should be an angular application that satisfies the following user stories:
 
-* User see a dashboard of their profile information. User can edit profile details without page reload via modal -- "medium/difficult".
+* User can see a dashboard of their profile information. User can edit profile details without page reload via modal -- "medium/difficult".
 * User can view reset their api token without page reload -- "simple"
 * User can click a button to view all their `simple_receipts` without page reload -- "simple".
 * User can see a form that allows them to add a `simple_receipt` without page reload -- "medium".
@@ -21,4 +21,64 @@ You'll need everything from the point of sale application you developed during t
 ## Note
 
 You can build the `/account` application with jQuery if you don't feel comfortable with angular, but this will make everything more difficult. It's a good exercise if you know you won't use angular on your final project.
+
+## Getting Started: Angular and Rails
+
+
+Let's install Angular with Rails. Let's just do this with Bower.
+
+```
+npm install -g bower
+```
+
+Once you have Bower you can get started. However, we don't want our bower_components in any folder. Let's make sure they end up `vendor/assets/`
+
+
+
+```bash
+touch .bowerrc
+
+```
+
+And in the `.bowerrc`
+
+
+```javascript
+{
+	"directory": "vendor/assets/components"
+}
+
+```
+
+Then we can install via bower angular.
+
+
+```
+bower install --save angular
+```
+
+Then verify that in your `vendor/assets/components/` their is an `angular` folder. If you verify that you application has angular.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
