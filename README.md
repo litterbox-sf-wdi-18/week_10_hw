@@ -11,16 +11,17 @@ You'll need to reference the point of sale application you developed during the 
 
 User can...
 
-* See a dashboard of their profile information. User can edit profile details without page reload via modal -- "medium/difficult".
 * View reset their api token without page reload -- "simple"
 * Click a button to view all their `simple_receipts` without page reload -- "simple".
 * See a form that allows them to add a `simple_receipt` without page reload -- "medium".
 * See the new `simple_receipt` added to the page.
+* See how many receipts were created today -- "easy/medium depending on approach".
 * Delete a receipt without page reload -- "medium".
 * Click a receipt and see a model to edit and update  it without changing views -- "medium/difficult".
-* See how many receipts were created today -- "easy/medium depending on approach".
+* See a dashboard of their profile information. User can edit profile details without page reload via modal -- "medium/difficult".
 * See how see a total from all receipts for the day -- "easy/medium/hard depending on your approach".
 
+(complete these in whatever order you wish)
 
 ## Note
 
