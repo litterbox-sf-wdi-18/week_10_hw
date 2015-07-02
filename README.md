@@ -30,13 +30,13 @@ You can build the `/account` application with jQuery if you don't feel comfortab
 ## Getting Started: Angular and Rails
 
 
-Let's install Angular with Rails. Let's just do this with Bower.
+Let's install Angular with Rails. Let's use Bower to manage our vendor assets.
 
 ```
 npm install -g bower
 ```
 
-Once you have Bower you can get started. However, we don't want our bower_components in any folder. Let's make sure they end up `vendor/assets/`
+Once you have Bower you can get started. However, we don't want our bower_components in any folder. Let's make sure they end up `vendor/assets/`. We can do this with a bower config file.
 
 
 
@@ -45,7 +45,7 @@ touch .bowerrc
 
 ```
 
-And in the `.bowerrc`
+And in the `.bowerrc` add...
 
 
 ```javascript
@@ -55,14 +55,14 @@ And in the `.bowerrc`
 
 ```
 
-Then we can install via bower angular.
+Then we can install angular via bower.
 
 
 ```
 bower install --save angular
 ```
 
-Then verify that in your `vendor/assets/components/` their is an `angular` folder. If you verify that you application has angular you can then move on to requiring it in your assets.
+Then verify that in your `vendor/assets/components/` their is an `angular` folder. Once you verify that you application has angular you can then move on to requiring it in your assets.
 
 `app/assets/javascripts/application.js`
 
@@ -79,6 +79,8 @@ Do you see angular in the above list of requires. It's important that it comes b
 
 
 Now you can write all you angular application code in your application.js. Let's add some simple logic to our application.js.
+
+Note: writing code without annotating your dependencies as strings will work in Rails development. In production Rails tries to minify your assets, so things will start breaking. If you hate annotating your code to be minification safe checkout this sweet [lib](https://github.com/olov/ng-annotate).
 
 `application.js`
 
