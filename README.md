@@ -5,13 +5,13 @@ The objective of this assignment is to finish the design of an API that uses bas
 
 ## Brief
 
-You'll need to reference the point of sale application you developed during the week. You should finish this if you haven't already. If you need help, see the `setup_help.md` file included in this repository. Once you have a simple receipts API you, where a user can sign up and login with an email and password, then focus on the angular application for the `/account` page. This page should contain an angular application that satisfies the following.
+You'll need to reference the point of sale application you developed during the week. You should finish this if you haven't already. If you need help, see the `setup_help.md` file included in this repository. Once you have a simple receipts API, where a user can sign up and login with an email and password, then you should focus on the angular application for the `/account` page. This page should contain an angular application that satisfies the following.
 
 ###User stories
 
 User can...
 
-* View reset their api token without page reload -- "simple"
+* View a reset button for their api token without page reload -- "simple"
 * Click a button to view all their `simple_receipts` without page reload -- "simple".
 * See a form that allows them to add a `simple_receipt` without page reload -- "medium".
 * See the new `simple_receipt` added to the page.
