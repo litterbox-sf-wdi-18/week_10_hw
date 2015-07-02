@@ -24,7 +24,7 @@ User can...
 
 ## Note
 
-You can build the `/account` application with jQuery if you don't feel comfortable with angular, but this will make everything more difficult. It's a good exercise if you know you won't use angular on your final project.
+You can build the `/account` application with jQuery if you don't feel comfortable with angular, but this is in some ways more difficult; however, it's a great exercise if won't use angular in the final project.
 
 ## Getting Started: Angular and Rails
 
