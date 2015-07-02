@@ -18,5 +18,7 @@ You'll need everything from the point of sale application you developed during t
 * User can see how see a total from all receipts for the day -- "easy/medium/hard depending on your approach".
 
 
+## Note
 
+You can build the `/account` application with jQuery if you don't feel comfortable with angular, but this will make everything more difficult. It's a good exercise if you know you won't use angular on your final project.
 
